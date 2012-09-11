@@ -50,10 +50,10 @@ def chkopts(opts):
     from karesansui.lib.utils import generate_phrase, generate_uuid, string_from_uuid, is_uuid
     from karesansui.lib.const import DEFAULT_LANGS
 
-    reg_email = re.compile("^[a-zA-Z0-9\./-]{1,}@[a-zA-Z0-9\./-]{4,}$")
+    reg_email = re.compile("^[a-zA-Z0-9\./_-]{1,}@[a-zA-Z0-9\./-]{4,}$")
     if opts.email:
         if reg_email.search(opts.email) is None:
-            raise Exception('ERROR: Illigal option value. option=%s value=%s' % ('-m or --email', opts.email))
+            raise Exception('ERROR: Illegal option value. option=%s value=%s' % ('-m or --email', opts.email))
     else:
         raise Exception('ERROR: %s option is required.' % '-m or --email')
 
