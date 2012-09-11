@@ -118,10 +118,10 @@ def chkopts(opts):
     if opts.group:
         if reg.search(opts.group):
             if opts.group not in [group[0] for group in get_grp_info()]:
-                raise KssCommandOptException('ERROR: Permission user not found. group=%s' % (opts.group))
+                raise KssCommandOptException('ERROR: Permission group not found. group=%s' % (opts.group))
         else:
             if int(opts.group) not in [group[2] for group in get_grp_info()]:
-                raise KssCommandOptException('ERROR: Permission user not found. group=%s' % (opts.group))
+                raise KssCommandOptException('ERROR: Permission group not found. group=%s' % (opts.group))
 
     reg = re.compile("^[0-9]{3,4}$")
     if opts.mode:
